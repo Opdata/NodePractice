@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 http
-  .createServer((res, req) => {
+  .createServer((req, res) => {
     fs.readFile("./index.html", (err, data) => {
       if (err) {
         throw err;
@@ -9,6 +9,6 @@ http
       res.end(data);
     });
   })
-  .listen(8081, () => {
-    console.log("8081번 포트에서 서버 대기중");
+  .listen(8080, () => {
+    console.log("8080번 포트에서 서버 대기중");
   });
